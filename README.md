@@ -27,3 +27,5 @@ Please be patient when spinning up the first container, most of our challenges a
 * If you're getting "Bind for 0.0.0.0:xxx failed: port is already allocated", chances are the port is being used by another process. Port 80 is often used by other web servers such as IIS,nginx,Apache, etc. An easy fix would be to modify the docker-compose file to use a different port, alternatively you can stop any services that are currently using that port.
 
 * Use `docker ps` to check if the containers are not shutdown properly, and use `docker stop $container_id` to stop them.
+
+* Raise an issue within this project if any flags are not working properly.
