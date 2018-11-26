@@ -1,0 +1,14 @@
+version: '3'
+services:
+  
+  # Do not change the service name, change the container name instead.
+  flag-app:
+    # Change the name to the name of your challenge.
+    container_name: network-snmp
+
+    image: kiwiconctf2038/network-snmp
+    environment:
+      - FLAG="KIWICON_CTF{85318A5AD3B5666F}"
+    
+    ports:
+    - "161:161/udp"

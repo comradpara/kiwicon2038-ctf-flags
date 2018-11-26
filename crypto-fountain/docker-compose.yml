@@ -1,0 +1,10 @@
+version: '3'
+services:
+  flag-app:
+    container_name: flag-fountain
+    image: kiwiconctf2038/crypto-fountain
+    environment:
+      - "FLAG=KIWICON_CTF{D6AF9FC4871C77D3}"
+    ports:
+    - "23:1234"
+

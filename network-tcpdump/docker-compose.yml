@@ -1,0 +1,7 @@
+version: '3'
+services:
+  flag-app:
+    container_name: network-tcpdump
+    image: kiwiconctf2038/network-tcpdump
+    ports:
+      - "80:5000"

@@ -1,0 +1,7 @@
+version: '3'
+services:
+  flag-app:
+    container_name: flag-web-timing
+    image: kiwiconctf2038/web-timing
+    ports:
+    - "80:3000"

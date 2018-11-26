@@ -1,0 +1,27 @@
+version: '3'
+services:
+  # Do not change the service name, change the container name instead.
+  flag-app:
+    # Change the name to the name of your challenge.
+    container_name: network-ports
+    image: kiwiconctf2038/network-ports
+
+    # The first port is the host machine port, the second is what the
+    # application listens on inside the container.
+    ports:
+    - "31337:31337"
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 200M
+          
+        reservations:
+          cpus: '0.10'
+          memory: 20M
+
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3

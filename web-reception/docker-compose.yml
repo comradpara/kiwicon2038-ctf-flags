@@ -1,0 +1,44 @@
+version: '3'
+services:
+  flag-app:
+    image: kiwiconctf2038/web-reception-flag
+    ports:
+    - "80:80"
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 200M
+
+        reservations:
+          cpus: '0.10'
+          memory: 20M
+
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+
+    depends_on:
+      - "mysql-db"
+
+  mysql-db:
+    image: kiwiconctf2038/web-reception-sql
+    labels:
+      - container.type:"database"
+    environment:
+      - MYSQL_ROOT_PASSWORD=6A0B007957A72D84100C153EF3E7CCE42F208AF9144D619A5A36B0CB13DFFF07
+      - MYSQL_DATABASE=kiwiconctf2018
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+
+      - MYSQL_USER=user_visitors
+      - MYSQL_PASSWORD=MonitorMouseLighterPadlock
+    restart: always
+    
+    environment:
+      - FLAG="KIWICON_CTF{939125D442DC324F811AF78F74A5FC97708BD80094EB6B233784FA0415F07FED}"
+    
+
+
+      

@@ -1,0 +1,7 @@
+version: '3'
+services:
+  flag-app:
+    container_name: flag-steg-hard
+    image: kiwiconctf2038/steg-hard
+    ports:
+    - "80:5000"

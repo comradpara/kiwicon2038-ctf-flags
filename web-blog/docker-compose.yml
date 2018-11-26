@@ -1,0 +1,9 @@
+version: '3'
+services:
+  flag-app:
+    labels:
+      - flag.category:"web"
+      - flag.points:100
+    image: kiwiconctf2038/web-blog
+    ports:
+      - "80:80"

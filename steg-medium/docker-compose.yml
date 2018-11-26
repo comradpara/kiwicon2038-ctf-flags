@@ -1,0 +1,7 @@
+version: '3'
+services:
+  flag-app:
+    container_name: flag-steg-medium
+    image: kiwiconctf2038/steg-medium
+    ports:
+    - "80:5000"

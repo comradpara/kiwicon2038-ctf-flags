@@ -1,0 +1,7 @@
+version: '3'
+services:
+  flag-app:
+    container_name: flag-crypto-02
+    image: kiwiconctf2038/crypto-oracle
+    ports:
+    - "80:5000"

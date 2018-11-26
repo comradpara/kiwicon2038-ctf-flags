@@ -1,0 +1,7 @@
+version: '3'
+services:
+  flag-app:
+    container_name: flag-crypto-01
+    image: kiwiconctf2038/crypto-train
+    ports:
+    - "80:5000"

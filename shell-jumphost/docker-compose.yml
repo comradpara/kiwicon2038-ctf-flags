@@ -1,0 +1,35 @@
+version: '3'
+services:
+  flag-app:
+    container_name: 03-ssh-jumphost
+    image: kiwiconctf2038/shell-jumphost
+    ports:
+      - "2222:22"
+    networks:
+      ssh_net:
+        ipv4_address: "172.28.12.101"
+
+  end-host:
+    container_name: 03-ssh-end
+    image: kiwiconctf2038/shell-end-host
+    networks:
+      ssh_net:
+        ipv4_address: "172.28.12.102"
+
+  caller:
+    container_name: 03-ssh-caller
+    image: kiwiconctf2038/shell-caller
+    networks:
+      ssh_net:
+        ipv4_address: "172.28.12.100"
+    depends_on:
+      - flag-app
+      - end-host
+
+networks:
+  ssh_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.12.0/24
