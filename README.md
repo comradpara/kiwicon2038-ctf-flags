@@ -2,7 +2,7 @@
 
 This repository contains the docker-compose files that 
 
-This repo contains all the docker-compose files that spin up the BSidesCBR 2017 CTF challenges. Each of the challenges listed here was available as part of the CTF, though unfortunately some challenges weren't able to be dockerised and released.
+This repo contains all the docker-compose files that spin up the CTF challenges. Each of the challenges listed here was available as part of the CTF, though unfortunately some challenges weren't able to be dockerised and released.
 
 
 
